@@ -1,8 +1,7 @@
 import React from 'react'
 import { UserButton } from '@clerk/nextjs'
-import Image from 'next/image'
 import { currentUser } from '@clerk/nextjs';
-import Logo from '@/assets/Logo Delizioso.png'
+import { SlBasket } from "react-icons/sl";
 import Link from 'next/link';
 export default async function Nav() {
     const user = await currentUser();
@@ -23,6 +22,7 @@ export default async function Nav() {
 
             </div>
             <div className='flex flex-row items-center gap-2'>
+            <SlBasket />
                 <p>{user?.username}</p>
                 <UserButton />
             </div>

@@ -11,6 +11,9 @@ const config: Config = {
       orange: "rgba(255, 138, 0, 1)",
       white: "#FFF",
       dark_brown: "rgba(49, 31, 9, 1)",
+      color1:"#ffe8cc",
+      lightGreen:"#ecfaf1 ",
+
 
     },
     extend: {
