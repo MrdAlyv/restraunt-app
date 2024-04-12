@@ -1,8 +1,13 @@
 import React from 'react'
 import Image from 'next/image'
 import saladImg from '@/assets/Illustration.png'
+import userImg from '@/assets/User.png'
 import Mask from "@/assets/Mask Group (3).png"
 import Menu from '@/components/menu'
+import chef1 from '@/assets/Group 10.png'
+import chef2 from '@/assets/Group 8.png'
+import chef3 from '@/assets/Group 9.png'
+import customerImg from '@/assets/Ellipse 16.png'
 const Home = () => {
   return (
     <>
@@ -27,7 +32,39 @@ const Home = () => {
           <p className='w-96  leading-7'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo delectus nam corporis neque, deserunt cumque officia, ea suscipit, vitae vel aliquam ipsa praesentium aspernatur debitis exercitationem excepturi optio reiciendis aliquid?</p>
         </div>
       </div>
-      <Menu/>
+      <h1 className='text-center mt-11 text-5xl font-semibold '>Our popular menu</h1>
+      <Menu />
+      <div>
+        <h1 className='text-center mt-11 text-5xl font-semibold '>Our greatest chef</h1>
+        <div className='flex flex-row justify-center items-center  gap-24 mt-11'>
+          <div className='text-center'>
+            <Image src={chef1} alt='chef1' width={300} height={500} />
+            <p className='m-4 font-bold text-xl' >Betran Komar</p>
+            <p>Head chef</p>
+          </div>
+          <div className='text-center'>
+            <Image src={chef2} alt='chef2' width={300} height={500} />
+            <p className='m-4 font-bold text-xl'>Ferry Sauwi</p>
+            <p>Chef</p>
+          </div>
+          <div className='text-center'>
+            <Image src={chef3} alt='chef3' width={300} height={500} />
+            <p className='m-4 font-bold text-xl' >Iswan Dracho</p>
+            <p>Chef</p>
+          </div>
+        </div>
+        <div>
+          <h1 className='text-center mt-11 text-5xl font-semibold '>Our customers say</h1>
+          <div className='flex justify-center items-center mt-11 flex-col'>
+            <Image src={customerImg} alt='customers' width={200} height={200} />
+            <p className=' text-lg font-semibold mt-7 mb-2'>Starla Virgoun</p>
+            <p>Financial advisor</p>
+          </div>
+          <div className='flex flex-row justify-center items-center' >
+            <Image src={userImg} alt='users'/>
+          </div>
+        </div>
+      </div>
     </>
   )
 }

@@ -2,7 +2,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { ClerkProvider } from "@clerk/nextjs";
 import Nav from '@/components/navBar'
 import Footer from '@/components/footer'
 import { Provider } from "react-redux";
@@ -24,11 +23,9 @@ export default function RootLayout({
       <body className={inter.className}>
 
           <Provider store={store}>
-        <ClerkProvider>
           <Nav/>
           {children}
           <Footer/>
-        </ClerkProvider>
           </Provider>
       </body>
     </html>

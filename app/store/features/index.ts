@@ -6,8 +6,7 @@ type Icard = {
     name: string,
     price: number,
     foodImage: HTMLImageElement,
-    item: any,
-    id: number
+    id: any,
     title: string;
 }
 

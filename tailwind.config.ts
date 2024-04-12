@@ -13,6 +13,7 @@ const config: Config = {
       dark_brown: "rgba(49, 31, 9, 1)",
       color1:"#ffe8cc",
       lightGreen:"#ecfaf1 ",
+      gray:"#f1f1f2"
 
 
     },

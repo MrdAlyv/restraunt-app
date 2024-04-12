@@ -1,10 +1,8 @@
 import React from 'react'
-import { UserButton } from '@clerk/nextjs'
-import { currentUser } from '@clerk/nextjs';
 import { SlBasket } from "react-icons/sl";
 import Link from 'next/link';
-export default async function Nav() {
-    const user = await currentUser();
+import MenuPage from '@/app/menu/page';
+export default function Nav() {
     return (
         <div className='flex flex-row justify-between m-6'>
             <div className='LOGO flex gap-4 justify-center items-center'>
@@ -13,8 +11,8 @@ export default async function Nav() {
             </div>
             <div className='flex flex-row justify-center items-center gap-11'>
                 <Link href={"/"}>Home</Link>
-                <Link href={"/"}>Menu</Link>
-                <Link href={"/"}>About us</Link>
+                <Link href={"/menu"}>Menu</Link>
+                <Link href={"/about-us"}>About us</Link>
                 <Link href={"/"}>Order online</Link>
                 <Link href={"/"}>Contact us</Link>
 
@@ -22,9 +20,7 @@ export default async function Nav() {
 
             </div>
             <div className='flex flex-row items-center gap-2'>
-            <SlBasket />
-                <p>{user?.username}</p>
-                <UserButton />
+                <SlBasket />
             </div>
         </div>
 

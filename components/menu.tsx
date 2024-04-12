@@ -4,12 +4,13 @@ import { useSelector } from 'react-redux'
 import { IStateCard } from '@/app/store/features'
 import React from 'react'
 import Image from 'next/image'
-
+import ICard from '@/app/dataType'
+import SkeletonLoading from './starRating'
+import defaultFood from '@/assets/defaultFood.png'
 const Menu = () => {
     const fetcher = (...args: any) => fetch(args).then(res => res.json())
     const datas = useSelector((state: IStateCard) => state.announcement)
-    console.log(datas)
-    
+
     const { data, error, isLoading } = useSWR('/api/foods', fetcher);
     const id = data?.results ? Array.from(new Set(data.results.map((item: any) => item.id))) : [];
     const name = data?.results ? Array.from(new Set(data.results.map((item: any) => item.name))) : [];
@@ -18,16 +19,18 @@ const Menu = () => {
     const title = data?.results ? Array.from(new Set(data.results.map((item: any) => item.title))) : [];
     return (
         <div>
-            <h1>Foods</h1>
-            <ul>
-            {data?.results.map((item, index) => (
-                    <li key={index}>
-                        <h2>{item.name}</h2>
-                        <p>Price: {item.price}</p>
-                        <img src={item.foodImage} alt={item.name} />
-                        <p>Title: {item.title}</p>
-                    </li>
-                ))}
+            <ul className='grid grid-cols-3 gap-24 m-11 justify-center items-center'>
+                {Array.from(new Set(data?.results)).map((item: ICard, index: number) => {
+                    const { id, name, price, foodImage, title } = item;
+                    return (
+                        <li key={index} className='bg-gray rounded-3xl w-80 flex flex-col justify-center items-center' >
+                            <Image src={defaultFood} alt={name} width={250} height={250} />
+                            <h2 className=' text-2xl font-semibold'>{name}</h2>
+                            <SkeletonLoading />
+                            <p className=' w-80 text-center m-2'>{title}</p>
+                            <p className='font-semibold text-xl mb-3'> {price}</p>
+                        </li>)
+                })}
             </ul>
         </div>
     )
