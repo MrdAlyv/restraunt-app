@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import Facebook from "@/assets/Facebook.png"
 import Instagram from '@/assets/Instagram.png'
-import Twitter from '@/assets/Twitter.png'
+import Twitter from '@/assets/twitter.png'
 import Link from 'next/link'
 export default function Footer() {
     return (
