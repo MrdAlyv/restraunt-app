@@ -29,10 +29,10 @@ export default function Footer() {
                     </div>
                     <div className='flex flex-col gap-7 mt-7'>
                         <Link href={"/"}>Home</Link>
-                        <Link href={"/"}>Menu</Link>
-                        <Link href={"/"}>About us</Link>
+                        <Link href={"/menu"}>Menu</Link>
+                        <Link href={"/about-us"}>About us</Link>
                         <Link href={"/"}>Order online</Link>
-                        <Link href={"/"}>Contact us</Link>
+                        <Link href={"/contact-us"}>Contact us</Link>
                     </div>
 
                 </div>
@@ -41,7 +41,7 @@ export default function Footer() {
 
                     <h1 className='text-orange text-2xl font-semibold'>Information</h1>
                     <div className='flex flex-col gap-7 mt-7'>
-                        <Link href={"/"}>About us</Link>
+                        <Link href={"/about-us"}>About us</Link>
                         <Link href={"/"}>Testimonial</Link>
                         <Link href={"/"}>Event</Link>
 

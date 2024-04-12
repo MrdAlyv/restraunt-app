@@ -19,12 +19,12 @@ const Home = () => {
           <button className='bg-orange mt-11 text-white flex items-center justify-center w-44 h-14 rounded-3xl'>Order now</button>
         </div>
         <div>
-          <Image src={saladImg} alt='salad' width={550} height={550} />
+          <Image src={saladImg} alt='salad' width={550} height={550} className='w-full h-auto relative z-0 rounded-lg transition-all duration-300 hover:scale-110' />
         </div>
       </div>
       <div className='flex justify-center items-center bg-lightGreen h-[600px]  gap-64'>
         <div >
-          <Image src={Mask} alt='mask' width={600} height={600} />
+          <Image src={Mask} alt='mask' width={600} height={600} className='w-full h-auto relative z-0 rounded-lg transition-all duration-300 hover:scale-110' />
         </div>
 
         <div>
@@ -35,20 +35,20 @@ const Home = () => {
       <h1 className='text-center mt-11 text-5xl font-semibold '>Our popular menu</h1>
       <Menu />
       <div>
-        <h1 className='text-center mt-11 text-5xl font-semibold '>Our greatest chef</h1>
+        <h1 className='text-center  m-24 text-5xl font-semibold '>Our greatest chef</h1>
         <div className='flex flex-row justify-center items-center  gap-24 mt-11'>
           <div className='text-center'>
-            <Image src={chef1} alt='chef1' width={300} height={500} />
+            <Image src={chef1} alt='chef1' width={300} height={500} className='w-full mb-11 h-auto relative z-0 rounded-lg transition-all duration-300 hover:scale-110' />
             <p className='m-4 font-bold text-xl' >Betran Komar</p>
             <p>Head chef</p>
           </div>
           <div className='text-center'>
-            <Image src={chef2} alt='chef2' width={300} height={500} />
+            <Image src={chef2} alt='chef2' width={300} height={500} className='w-full mb-11 h-auto relative z-0 rounded-lg transition-all duration-300 hover:scale-110' />
             <p className='m-4 font-bold text-xl'>Ferry Sauwi</p>
             <p>Chef</p>
           </div>
           <div className='text-center'>
-            <Image src={chef3} alt='chef3' width={300} height={500} />
+            <Image src={chef3} alt='chef3' width={300} height={500} className='w-full mb-11 h-auto relative z-0 rounded-lg transition-all duration-300 hover:scale-110' />
             <p className='m-4 font-bold text-xl' >Iswan Dracho</p>
             <p>Chef</p>
           </div>
@@ -61,7 +61,7 @@ const Home = () => {
             <p>Financial advisor</p>
           </div>
           <div className='flex flex-row justify-center items-center' >
-            <Image src={userImg} alt='users'/>
+            <Image src={userImg} alt='users' />
           </div>
         </div>
       </div>

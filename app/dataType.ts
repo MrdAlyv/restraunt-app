@@ -1,6 +1,6 @@
 export default interface ICard {
     title: string;
-    id:string;
+    id:number;
     name:string;
     price:number;
     foodImage:HTMLImageElement;

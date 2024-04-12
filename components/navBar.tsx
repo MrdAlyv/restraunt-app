@@ -14,7 +14,7 @@ export default function Nav() {
                 <Link href={"/menu"}>Menu</Link>
                 <Link href={"/about-us"}>About us</Link>
                 <Link href={"/"}>Order online</Link>
-                <Link href={"/"}>Contact us</Link>
+                <Link href={"/contact-us"}>Contact us</Link>
 
 
 
