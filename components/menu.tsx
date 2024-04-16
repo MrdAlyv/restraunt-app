@@ -19,16 +19,7 @@ const Menu = () => {
     return (
         <div>
             <ul className='grid grid-cols-3 gap-24 m-11 justify-center items-center'>
-                {/* {Array.from(new Set(data?.results)).map((item: ICard, index) => {
-                    const { id, name, price, foodImage, title } = item;
-                    return (
-                        <li key={index} className='bg-gray rounded-3xl w-80 flex flex-col justify-center items-center' >
-                            <Image src={defaultFood} alt={name} width={250} height={250} className='w-full h-auto relative z-0 rounded-lg transition-all duration-300 hover:scale-110' />
-                            <h2 className=' text-2xl font-semibold'>{name}</h2>
-                            <p className=' w-80 text-center m-2'>{title}</p>
-                            <p className='font-semibold text-xl mb-3'> {price}</p>
-                        </li>)
-                })} */}
+        
                 {data?.results?.map((item: ICard, index: number) => {
                     const { id, name, price, foodImage, title } = item;
                     return (

@@ -2,7 +2,7 @@
 import useSWR from 'swr'
 import { useSelector } from 'react-redux'
 import { IStateCard } from '@/app/store/features'
-import React,{useState} from 'react'
+import React,{useState, useEffect} from 'react';
 import Image from 'next/image'
 import ICard from '@/app/dataType'
 import defaultFood from '@/assets/defaultFood.png'
@@ -19,6 +19,9 @@ export default function Order() {
     const title = data?.results ? Array.from(new Set(data.results.map((item: any) => item.title))) : [];
     const handleOrderNow = (item: ICard) => {
         setSelectedCards(prevCards => [...prevCards, item]);
+    };
+    const handleRemoveItem = (index: number) => {
+        setSelectedCards(prevCards => prevCards.filter((_, i) => i !== index));
     };
     return (
         <div className='flex flex-row'>
@@ -48,8 +51,10 @@ export default function Order() {
                 {selectedCards.map((card, index) => (
                         <div key={index}>
                             <h2>{card.name}</h2>
-                        </div>
-                    ))}
+                            <p>{card.price}</p>
+                            <button onClick={() => handleRemoveItem(index)}>Remove</button>
+                        </div> 
+                    ))}                    
                 </div>
             </div>
         </div>
