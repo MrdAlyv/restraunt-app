@@ -1,12 +1,13 @@
+
 'use client'
 import useSWR from 'swr'
 import { useSelector } from 'react-redux'
 import { IStateCard } from '@/app/store/features'
-import React,{useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image'
 import ICard from '@/app/dataType'
 import defaultFood from '@/assets/defaultFood.png'
-
+import { RiDeleteBin6Fill } from "react-icons/ri";
 export default function Order() {
     const fetcher = (...args: any) => fetch(args).then(res => res.json())
     const datas = useSelector((state: IStateCard) => state.announcement)
@@ -23,6 +24,7 @@ export default function Order() {
     const handleRemoveItem = (index: number) => {
         setSelectedCards(prevCards => prevCards.filter((_, i) => i !== index));
     };
+    const totalOrderPrice = selectedCards.reduce((total, card) => total + card.price, 0);
     return (
         <div className='flex flex-row'>
             <div>
@@ -36,8 +38,8 @@ export default function Order() {
                                 <h2 className=' text-2xl font-semibold'>{name}</h2>
                                 <p className='  text-center m-2'>{title}</p>
                                 <div className='flex flex-row  items-center justify-center gap-3'>
-                                    <p className='font-semibold text-xl mb-3'> {price}</p>
-                                    <button onClick={() => handleOrderNow(item)}className='bg-orange text-white h-11 rounded-xl'>Order now</button>
+                                    <p className='font-semibold text-xl mb-3'>$ {price}</p>
+                                    <button onClick={() => handleOrderNow(item)} className='bg-orange text-white h-11 rounded-xl'>Order now</button>
                                 </div>
                             </li>
                         );
@@ -48,16 +50,20 @@ export default function Order() {
             <div className='bg-gray  w-64 flex flex-col  items-center rounded-xl'>
                 <h1 className=' bg-dark_blue text-white w-56 h-20 flex items-center justify-center rounded-2xl mt-4'>Order List</h1>
                 <div>
-                {selectedCards.map((card, index) => (
+                    {selectedCards.map((card, index) => (
                         <div key={index}>
-                            <h2>{card.name}</h2>
-                            <p>{card.price}</p>
-                            <button onClick={() => handleRemoveItem(index)}>Remove</button>
-                        </div> 
-                    ))}                    
+                            <div className=' flex flex-row justify-between items-center gap-12 mt-7'>
+                                <h2 className=' text-2xl font-bold'>{card.name}</h2>
+                                <RiDeleteBin6Fill onClick={() => handleRemoveItem(index)} className=' cursor-pointer w-6 h-6' />
+                            </div>
+                            <p className='text-orange text-lg font-bold'>${card.price}</p>
+                        </div>
+                    ))}
+                    <div className='mt-11'>
+                        <h2 className='text-xl font-bold  '>Total:  <span className='text-orange'>$ {totalOrderPrice.toFixed(2)}</span></h2>
+                    </div>
                 </div>
             </div>
         </div>
     )
 }
-

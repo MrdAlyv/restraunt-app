@@ -27,7 +27,7 @@ const Menu = () => {
                             <Image src={defaultFood} alt={name} width={250} height={250} className='w-full h-auto relative z-0 rounded-lg transition-all duration-300 hover:scale-110' />
                             <h2 className=' text-2xl font-semibold'>{name}</h2>
                             <p className=' w-80 text-center m-2'>{title}</p>
-                            <p className='font-semibold text-xl mb-3'> {price}</p>
+                            <p className='font-semibold text-xl mb-3'> ${price}</p>
                         </li>
                     );
                 })}
