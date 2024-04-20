@@ -14,7 +14,8 @@ const config: Config = {
       color1:"#ffe8cc",
       lightGreen:"#ecfaf1 ",
       gray:"#f1f1f2",
-      dark_blue:"rgba(81, 41, 130, 1)"
+      dark_blue:"rgba(81, 41, 130, 1)",
+      green:"#3fa72f"
 
 
     },

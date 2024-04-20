@@ -2,7 +2,9 @@ import React from 'react'
 import { SlBasket } from "react-icons/sl";
 import Link from 'next/link';
 import MenuPage from '@/app/menu/page';
+import { useRouter } from 'next/navigation';
 export default function Nav() {
+    const router = useRouter()
     return (
         <div className='flex flex-row justify-between m-6'>
             <div className='LOGO flex gap-4 justify-center items-center'>
@@ -19,9 +21,13 @@ export default function Nav() {
 
 
             </div>
-            <div className='flex flex-row items-center gap-2'>
+            <div className='flex flex-row items-center gap-28'>
                 <SlBasket />
+                <button className=' w-24 h-11 bg-green rounded-2xl text-white ' onClick={() => router.push("/log-in")}>
+                    Log in
+                </button>
             </div>
+
         </div>
 
     )
