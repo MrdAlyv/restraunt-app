@@ -32,7 +32,7 @@ const Home = () => {
           <p className='w-96  leading-7'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo delectus nam corporis neque, deserunt cumque officia, ea suscipit, vitae vel aliquam ipsa praesentium aspernatur debitis exercitationem excepturi optio reiciendis aliquid?</p>
         </div>
       </div>
-      <h1 className='text-center mt-11 text-5xl font-semibold '>Our popular menu</h1>
+      <h1 className='text-center m-24 text-5xl font-semibold '>Our popular menu</h1>
       <Menu />
       <div>
         <h1 className='text-center  m-24 text-5xl font-semibold '>Our greatest chef</h1>

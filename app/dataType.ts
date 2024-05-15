@@ -4,4 +4,9 @@ export default interface ICard {
     name:string;
     price:number;
     foodImage:HTMLImageElement;
+    quantity:number;
+    menu:any;
+    }
+    export default interface ITotalStars {
+        totalStars:any
     }

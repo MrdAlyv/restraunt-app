@@ -11,11 +11,13 @@ const config: Config = {
       orange: "rgba(255, 138, 0, 1)",
       white: "#FFF",
       dark_brown: "rgba(49, 31, 9, 1)",
-      color1:"#ffe8cc",
-      lightGreen:"#ecfaf1 ",
-      gray:"#f1f1f2",
-      dark_blue:"rgba(81, 41, 130, 1)",
-      green:"#3fa72f"
+      color1: "#ffe8cc",
+      lightGreen: "#ecfaf1 ",
+      gray: "#f1f1f2",
+      dark_blue: "rgba(81, 41, 130, 1)",
+      green: "#3fa72f",
+      red: "#FF0000",
+      black: "rgb(0,0,0)"
 
 
     },
