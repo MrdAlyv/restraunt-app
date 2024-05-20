@@ -8,7 +8,7 @@ export default function Nav() {
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
-const router=useRouter();
+    const router = useRouter();
 
     return (
         <div className='flex flex-col md:flex-row md:justify-between m-6 '>
@@ -40,10 +40,9 @@ const router=useRouter();
                 <Link href='/order-online'>Order online</Link>
                 <Link href='/contact-us'>Contact us</Link>
             </div>
-            {/* Basket and Log in */}
             <div className='hidden md:flex md:flex-row items-center gap-4'>
                 <SlBasket />
-                <button onClick={() => router.push("/log-in")} className='w-24 h-11 bg-green rounded-2xl text-white'>
+                <button onClick={() => router.push("/login")} className='w-24 h-11 bg-green rounded-2xl text-white'>
                     Log in
                 </button>
             </div>

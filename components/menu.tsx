@@ -85,24 +85,25 @@ const Menu = () => {
         return false;
     });
     const allItems = allCategoriesSelected ? data?.results : filteredItems;
+
     return (
-        <div>
-            <div className='flex flex-row gap-24 mx-11 '>
-                <button onClick={handleToggleAllCategories} className={buttonClassAll}>All Categories</button>
-                <button onClick={handleToggleLunch} className={buttonClassLunch}>Lunch</button>
-                <button onClick={handleToggleDinner} className={buttonClassDinner}>Dinner</button>
-                <button onClick={handleToggleSalad} className={buttonClassSalad}>Salad</button>
+        <div className='p-4'>
+            <div className='flex flex-wrap gap-4 justify-center mb-8'>
+                <button onClick={handleToggleAllCategories} className={`${buttonClassAll} px-4 py-2 rounded-xl border`}>All Categories</button>
+                <button onClick={handleToggleLunch} className={`${buttonClassLunch} px-4 py-2 rounded-xl border`}>Lunch</button>
+                <button onClick={handleToggleDinner} className={`${buttonClassDinner} px-4 py-2 rounded-xl border`}>Dinner</button>
+                <button onClick={handleToggleSalad} className={`${buttonClassSalad} px-4 py-2 rounded-xl border`}>Salad</button>
             </div>
-            <ul className='grid grid-cols-3 gap-24 m-11 justify-center items-center'>
+            <ul className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8'>
                 {allItems?.map((item: ICard, index: number) => {
                     const { id, name, price, image, title } = item;
                     return (
-                        <li key={index} className='bg-gray rounded-3xl w-80 flex flex-col justify-center items-center'>
-                            <img src={image} alt=""  className='w-96 '/>
-                            <h2 className='text-2xl font-semibold'>{name}</h2>
+                        <li key={index} className='bg-gray rounded-3xl w-full lg:w-80 flex flex-col justify-center items-center'>
+                            <img src={image} alt={name} className='w-full lg:w-96 h-48 lg:h-auto object-cover rounded-t-3xl mb-4' />
+                            <h2 className='text-2xl font-semibold mb-2'>{name}</h2>
                             <StarRating totalStars={5} />
-                            <p className='w-80 text-center m-2'>{title}</p>
-                            <p className='font-semibold text-xl mb-3'> ${price}</p>
+                            <p className='text-center m-2 lg:w-80'>{title}</p>
+                            <p className='font-semibold text-xl mb-3'>${price}</p>
                         </li>
                     );
                 })}
