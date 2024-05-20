@@ -1,6 +1,6 @@
 
 import { createSlice } from '@reduxjs/toolkit';
-import { AppThunk, RootState } from '@/app//store/features/index'; // RootState'i içe aktar
+import { AppThunk, RootState } from '@/app//store/features/index'; 
 
 export const menuSlice = createSlice({
     name: 'menu',

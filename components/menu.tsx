@@ -3,14 +3,12 @@ import useSWR from 'swr';
 import StarRating from './starRating';
 import { useDispatch, useSelector } from 'react-redux';
 import React, { useState } from 'react';
-import Image from 'next/image';
-import defaultFood from "@/assets/defaultFood.png";
 import { toggleLunch, selectShowLunch, toggleDinner, toggleSalad, selectShowDinner, selectShowSalad, toggleAllCategories } from '@/app/store/menuSlice';
 import ICard from '@/app/dataType';
 
 const Menu = () => {
     const fetcher = (...args: any) => fetch(args).then(res => res.json());
-    const { data} = useSWR('/api/foods', fetcher);
+    const { data } = useSWR('/api/foods', fetcher);
     const [allCategoriesSelected, setAllCategoriesSelected] = useState(true);
     const dispatch = useDispatch();
     const showLunch = useSelector(selectShowLunch);
@@ -68,6 +66,7 @@ const Menu = () => {
         setAllCategoriesSelected(false);
         setSelectedCategory('salad');
     };
+
     const buttonClassAll = selectedCategory === 'all' ? 'text-white bg-black p-4 rounded-xl' : '';
     const buttonClassLunch = selectedCategory === 'lunch' ? 'text-white bg-black p-4 rounded-xl' : '';
     const buttonClassDinner = selectedCategory === 'dinner' ? 'text-white bg-black p-4 rounded-xl' : '';
@@ -95,11 +94,11 @@ const Menu = () => {
                 <button onClick={handleToggleSalad} className={buttonClassSalad}>Salad</button>
             </div>
             <ul className='grid grid-cols-3 gap-24 m-11 justify-center items-center'>
-                {allItems?.map((item: ICard, index: any) => {
-                    const { id, name, price, foodImage, title } = item;
+                {allItems?.map((item: ICard, index: number) => {
+                    const { id, name, price, image, title } = item;
                     return (
                         <li key={index} className='bg-gray rounded-3xl w-80 flex flex-col justify-center items-center'>
-                            <Image src={defaultFood} alt={name} className='w-full h-auto relative z-0 rounded-lg transition-all duration-300 hover:scale-110' />
+                            <img src={image} alt=""  className='w-96 '/>
                             <h2 className='text-2xl font-semibold'>{name}</h2>
                             <StarRating totalStars={5} />
                             <p className='w-80 text-center m-2'>{title}</p>

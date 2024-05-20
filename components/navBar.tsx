@@ -11,8 +11,8 @@ export default function Nav() {
 const router=useRouter();
 
     return (
-        <div className='flex flex-col md:flex-row md:justify-between m-6'>
-            <div className='flex justify-between items-center'>
+        <div className='flex flex-col md:flex-row md:justify-between m-6 '>
+            <div className='flex justify-between items-center '>
                 <div className='LOGO flex gap-4 justify-center items-center'>
                     <div className='bg-orange w-14 h-14 rounded-full flex items-center justify-center text-2xl text-white'>D</div>
                     <div className='text-xl font-semibold'>

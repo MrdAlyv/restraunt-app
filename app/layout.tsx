@@ -5,7 +5,7 @@ import "./globals.css";
 import Nav from '@/components/navBar'
 import Footer from '@/components/footer'
 import { Provider } from "react-redux";
-import { store } from "./store/features";
+import { store } from '@/app/store/features';
 const inter = Inter({ subsets: ["latin"] });
 
 // export const metadata: Metadata = {
